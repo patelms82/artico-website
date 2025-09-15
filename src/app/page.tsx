@@ -89,7 +89,7 @@ export default function Home() {
               <p className="text-xl md:text-2xl text-gray-800 leading-relaxed max-w-4xl mx-auto font-light">
                 Transforming brands through innovative design, cutting-edge technology, and artistic excellence. 
                 <span className="font-semibold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text">
-                  Let's create something extraordinary together.
+                  Let&apos;s create something extraordinary together.
                 </span>
               </p>
             </motion.div>
@@ -202,7 +202,7 @@ export default function Home() {
               Ready to Transform Your Brand?
             </h3>
             <p className="text-xl mb-8 opacity-90">
-              Let's collaborate to bring your vision to life with cutting-edge design and innovation.
+              Let&apos;s collaborate to bring your vision to life with cutting-edge design and innovation.
             </p>
             <motion.a
               whileHover={{ scale: 1.05 }}
