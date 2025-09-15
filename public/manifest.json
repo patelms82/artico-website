@@ -1,0 +1,26 @@
+{
+  "name": "Artico Imagination - Creative Studio",
+  "short_name": "Artico Idea",
+  "description": "Creative agency from Ahmedabad, India. Specialized in branding, design, photography, and digital marketing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

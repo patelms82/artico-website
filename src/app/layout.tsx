@@ -17,6 +17,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Artico Imagination - Creative Studio",
   description: "Creative agency from Ahmedabad, India. Specialized in branding, design, photography, and digital marketing.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ 
