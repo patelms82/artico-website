@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -77,15 +79,27 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                className="text-gray-700 hover:text-purple-600 font-medium transition-all duration-200 hover:scale-105"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+              return (
+                <div key={link.name} className="relative group">
+                  <Link
+                    href={link.href}
+                    className={`font-medium transition-colors duration-200 ${active ? 'text-indigo-700' : 'text-gray-700 hover:text-purple-600'}`}
+                  >
+                    {link.name}
+                  </Link>
+                  {/* Static underline for active */}
+                  {active && (
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-full" />
+                  )}
+                  {/* Hover underline (only shows when not active) */}
+                  {!active && (
+                    <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full" />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -128,22 +142,29 @@ export default function Navbar() {
               className="md:hidden overflow-hidden bg-white border-t border-gray-200"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={closeMenu}
-                      className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-all duration-200"
+                {navLinks.map((link, index) => {
+                  const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+                  return (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="relative"
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={link.href}
+                        onClick={closeMenu}
+                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-indigo-700 bg-indigo-50' : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'}`}
+                      >
+                        {link.name}
+                      </Link>
+                      {active && (
+                        <span className="absolute left-3 right-3 bottom-1 h-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-full" />
+                      )}
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           )}
