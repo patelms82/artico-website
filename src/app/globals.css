@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Prevent navbar flash on page load */
+nav {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
