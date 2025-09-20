@@ -85,17 +85,17 @@ export default function Navbar() {
                 <div key={link.name} className="relative group">
                   <Link
                     href={link.href}
-                    className={`font-medium transition-colors duration-200 ${active ? 'text-indigo-700' : 'text-gray-700 hover:text-purple-600'}`}
+                    className={`font-medium transition-colors duration-200 ${active ? 'text-black' : 'text-gray-800 hover:text-black'}`}
                   >
                     {link.name}
                   </Link>
                   {/* Static underline for active */}
                   {active && (
-                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-full" />
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-black rounded-full" />
                   )}
                   {/* Hover underline (only shows when not active) */}
                   {!active && (
-                    <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full" />
+                    <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-black rounded-full transition-all duration-300 group-hover:w-full" />
                   )}
                 </div>
               );
@@ -155,12 +155,12 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={closeMenu}
-                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-indigo-700 bg-indigo-50' : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'}`}
+                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-black bg-gray-100' : 'text-gray-800 hover:text-black hover:bg-gray-100'}`}
                       >
                         {link.name}
                       </Link>
                       {active && (
-                        <span className="absolute left-3 right-3 bottom-1 h-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-full" />
+                        <span className="absolute left-3 right-3 bottom-1 h-0.5 bg-black rounded-full" />
                       )}
                     </motion.div>
                   );

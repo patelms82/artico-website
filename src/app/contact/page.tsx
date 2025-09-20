@@ -4,12 +4,12 @@ import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden min-h-screen">
+    <div className="bg-white relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-400/10 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-200 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -27,16 +27,12 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-8"
             >
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Get In
-                </span>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-black">
+                Get In
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Touch
-                </span>
+                Touch
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
+              <div className="w-24 h-1 bg-black mx-auto mb-6 rounded-full"></div>
             </motion.div>
 
             <motion.div
@@ -65,7 +61,7 @@ export default function Contact() {
               className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/50"
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl">
                   <FaEnvelope />
                 </div>
                 <div className="ml-4">
@@ -75,7 +71,7 @@ export default function Contact() {
               </div>
               <a 
                 href="mailto:patelms82@gmail.com"
-                className="text-lg text-indigo-600 hover:text-indigo-800 font-semibold block mb-4"
+                className="text-lg text-black hover:text-gray-700 font-semibold block mb-4"
               >
                 patelms82@gmail.com
               </a>
@@ -91,7 +87,7 @@ export default function Contact() {
               className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/50"
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl">
                   <FaLinkedin />
                 </div>
                 <div className="ml-4">
@@ -103,7 +99,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/mukesh-patel-9a270420/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg text-blue-600 hover:text-blue-800 font-semibold block mb-4"
+                className="text-lg text-black hover:text-gray-700 font-semibold block mb-4"
               >
                 mukesh-patel-9a270420
               </a>
@@ -119,12 +115,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50 mb-16"
+            className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl">
+                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white text-xl">
                     <FaMapMarkerAlt />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-800 ml-4">Our Location</h3>
@@ -143,19 +139,19 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Why Choose Us?</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
                     Creative excellence since 2000
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-700 rounded-full mr-3"></div>
                     Global experience, local expertise
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
                     Comprehensive creative solutions
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
                     Personalized service approach
                   </li>
                 </ul>
@@ -170,7 +166,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white shadow-2xl">
+            <div className="bg-black rounded-3xl p-12 text-white shadow-2xl">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Start Your Project?
               </h3>
@@ -181,7 +177,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="mailto:patelms82@gmail.com"
-                className="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
               >
                 Send Message Now
               </motion.a>

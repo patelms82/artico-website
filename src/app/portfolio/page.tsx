@@ -16,12 +16,12 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden min-h-screen">
+    <div className="bg-white relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-400/10 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-200 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -39,16 +39,12 @@ export default function Portfolio() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-8"
             >
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Our
-                </span>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-black">
+                Our
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Portfolio
-                </span>
+                Portfolio
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
+              <div className="w-24 h-1 bg-black mx-auto mb-6 rounded-full"></div>
             </motion.div>
 
             <motion.div
@@ -78,13 +74,13 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 group cursor-pointer"
+                className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group cursor-pointer"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
                     <div className="w-8 h-8 bg-white rounded-full"></div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-black transition-colors">
                     {category}
                   </h3>
                   <p className="text-sm text-gray-600 mt-2">Coming Soon</p>
@@ -98,7 +94,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50 mb-16"
+            className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 mb-16"
           >
             <div className="text-center">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Portfolio Coming Soon</h2>
@@ -117,7 +113,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white shadow-2xl">
+            <div className="bg-black rounded-3xl p-12 text-white shadow-2xl">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Let&apos;s Create Your Next Project
               </h3>
@@ -128,7 +124,7 @@ export default function Portfolio() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
               >
                 Start Your Project
               </motion.a>
