@@ -41,11 +41,11 @@ export default function About() {
                 <Image
                   src="/images/mukesh_photo.jpg"
                   alt="Mukesh Patel - Founder of Artico Imagination"
-                  width={400}
-                  height={400}
-                  className="rounded-full object-cover shadow-2xl border-4 border-white/20"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl object-cover shadow-2xl border-4 border-white/20"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
               </div>
             </motion.div>
             
