@@ -1,6 +1,6 @@
 ﻿"use client";
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import AnimatedTextLogo from "@/components/AnimatedTextLogo";
 
 const skills = [
@@ -141,27 +141,27 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
           >
-            {[
-              { number: "25+", label: "Years Experience", desc: "Crafting exceptional designs" },
-              { number: "500+", label: "Projects Completed", desc: "Across India & globally" },
-              { number: "20+", label: "Creative Services", desc: "From concept to completion" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-8 bg-gray-800/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-700/50"
-              >
-                <div className="text-4xl md:text-5xl font-black text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-xl font-semibold text-gray-200 mb-2">
-                  {stat.label}
-                </div>
-                <div className="text-gray-400">
-                  {stat.desc}
-                </div>
-              </motion.div>
-            ))}
+            <AnimatedStatCard 
+              targetNumber={25} 
+              suffix="+" 
+              label="Years Experience" 
+              desc="Crafting exceptional designs"
+              delay={0}
+            />
+            <AnimatedStatCard 
+              targetNumber={500} 
+              suffix="+" 
+              label="Projects Completed" 
+              desc="Across India & globally"
+              delay={0.2}
+            />
+            <AnimatedStatCard 
+              targetNumber={20} 
+              suffix="+" 
+              label="Creative Services" 
+              desc="From concept to completion"
+              delay={0.4}
+            />
           </motion.div>
 
           {/* CTA Section */}
@@ -169,7 +169,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="text-center bg-black rounded-3xl p-12 text-white"
+            className="text-center bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-white border border-gray-800/50 shadow-2xl"
           >
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Transform Your Brand?
@@ -294,5 +294,74 @@ function SkillsRevealSection() {
         ))}
       </div>
     </div>
+  );
+}
+
+// Animated Counter Component
+function AnimatedStatCard({ 
+  targetNumber, 
+  suffix = "", 
+  label, 
+  desc, 
+  delay = 0 
+}: {
+  targetNumber: number;
+  suffix?: string;
+  label: string;
+  desc: string;
+  delay?: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        const controls = animate(count, targetNumber, {
+          duration: 2,
+          ease: "easeOut"
+        });
+        return controls.stop;
+      }, delay * 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, count, targetNumber, delay]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: delay,
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }}
+      className="text-center p-8 bg-gray-800/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-700/50"
+    >
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Animated Number */}
+        <div className="text-4xl md:text-5xl font-black text-white mb-2">
+          <motion.span>{rounded}</motion.span>
+          <span>{suffix}</span>
+        </div>
+
+        {/* Label */}
+        <div className="text-xl font-semibold text-gray-200 mb-2">
+          {label}
+        </div>
+
+        {/* Description */}
+        <div className="text-gray-400">
+          {desc}
+        </div>
+      </div>
+    </motion.div>
   );
 }
