@@ -1,6 +1,6 @@
 ﻿"use client";
 import { motion } from 'framer-motion';
-import AnimatedLogo from '../components/AnimatedLogo';
+import AnimatedTextLogo from "@/components/AnimatedTextLogo";
 
 const skills = [
   'Logos',
@@ -52,7 +52,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-8"
             >
-              <AnimatedLogo />
+              <AnimatedTextLogo />
+
             </motion.div>
 
             <motion.div
@@ -61,9 +62,6 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mb-8"
             >
-              <p className="text-2xl md:text-3xl font-light text-gray-700 mb-4">
-                Creative Studio
-              </p>
               <p className="text-lg text-gray-600 flex items-center justify-center gap-2">
                 <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
                 Ahmedabad, India
