@@ -43,7 +43,6 @@ export default function About() {
                   alt="Mukesh Patel - Founder of Artico Imagination"
                   width={500}
                   height={600}
-                  className="rounded-2xl object-cover shadow-2xl border-4 border-white/20"
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
               </div>
@@ -56,7 +55,7 @@ export default function About() {
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">Mukesh Patel</h2>
               <p className="text-2xl text-white font-semibold mb-6">Founder</p>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Visionary leader and creative director behind Artico Imagination, bringing over two decades 
                 of artistic excellence and strategic innovation to transform ideas into powerful visual narratives.
               </p>
@@ -71,16 +70,16 @@ export default function About() {
             className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 max-w-4xl mx-auto"
           >
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-white mb-6 text-center">Creative Excellence Since 2000</h3>
+              <h3 className="text-lg font-bold text-white mb-6 text-center">Creative Excellence Since 2000</h3>
               
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-base text-gray-300 leading-relaxed">
                 Artico Imagination is a premier creative agency founded and led by <span className="text-white font-semibold">Mukesh Patel</span>, 
                 based in Ahmedabad, India, with extensive experience working across India and globally. 
                 Under his visionary leadership, we are passionate about helping brands grow through 
                 innovative design, strategic marketing, and artistic excellence.
               </p>
               
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-base text-gray-300 leading-relaxed">
                 Our journey began with Mukesh&apos;s vision to transform how brands communicate with their audiences. 
                 With over two decades of creative expertise, he has built Artico Imagination into a trusted partner 
                 for businesses seeking exceptional design solutions. Today, we continue to push boundaries in 
