@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
 // Performance optimization: Check for reduced motion preference
 const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -49,26 +50,18 @@ export default function Clients() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
           >
             {[
-              { label: 'Projects', value: '50+' },
-              { label: 'Industries', value: '15+' },
-              { label: 'Retention', value: '90%' },
-              { label: 'Satisfaction', value: '100%' },
+              { label: 'Projects', value: 50, suffix: '+' },
+              { label: 'Industries', value: 15, suffix: '+' },
+              { label: 'Retention', value: 90, suffix: '%' },
+              { label: 'Satisfaction', value: 100, suffix: '%' },
             ].map((item, i) => (
-              <motion.div
+              <AnimatedStatCard
                 key={item.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: 0.55 + i * 0.1 }}
-                className="p-6 text-center"
-              >
-                <div className="text-3xl font-extrabold text-white">
-                  {item.value}
-                </div>
-                <div className="mt-2 text-gray-300 font-medium tracking-wide">
-                  {item.label}
-                </div>
-              </motion.div>
+                targetNumber={item.value}
+                suffix={item.suffix}
+                label={item.label}
+                delay={0.55 + i * 0.1}
+              />
             ))}
           </motion.div>
           <motion.div
@@ -92,5 +85,60 @@ export default function Clients() {
         </motion.div>
       </main>
     </div>
+  );
+}
+
+// Animated Stat Card Component
+function AnimatedStatCard({ 
+  targetNumber, 
+  suffix = "", 
+  label, 
+  delay = 0 
+}: {
+  targetNumber: number;
+  suffix?: string;
+  label: string;
+  delay?: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.5
+  });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        const controls = animate(count, targetNumber, {
+          duration: 1.5,
+          ease: "easeOut"
+        });
+        return controls.stop;
+      }, delay * 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, count, targetNumber, delay]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.5, delay: delay * 0.1 }}
+      className="p-6 text-center"
+    >
+      <div className="text-3xl font-extrabold text-white">
+        <motion.span>{rounded}</motion.span>
+        <span>{suffix}</span>
+      </div>
+      <div className="mt-2 text-gray-300 font-medium tracking-wide">
+        {label}
+      </div>
+    </motion.div>
   );
 }
