@@ -9,7 +9,7 @@ export default function AnimatedTextLogo() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   
-  const text = "Artico Imagination";
+  const text = "Where Ideas Come Alive";
   const letters = text.split('');
 
   // Predefined positions to avoid hydration mismatch
@@ -46,8 +46,8 @@ export default function AnimatedTextLogo() {
     return (
       <div className="relative flex flex-col items-center justify-center h-[50vh] min-h-[400px] max-h-[600px] w-full">
         <div className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center">
-          <span className="text-white font-medium">Artico</span>{' '}
-          <span className="text-gray-300">Imagination</span>
+          <span className="text-white font-medium">Where Ideas</span>{' '}
+          <span className="text-gray-300">Come Alive</span>
         </div>
         <div className="mt-8 text-sm tracking-[0.3em] text-white/40 font-light uppercase text-center">
           Creative Studio
@@ -357,7 +357,7 @@ export default function AnimatedTextLogo() {
               className={`inline-block ${
                 letter === ' ' ? 'w-4 md:w-6' : ''
               } ${
-                index < 6 ? 'text-white font-medium' : 'text-gray-300'
+                index < 11 ? 'text-white font-medium' : 'text-gray-300'
               }`}
               style={{
                 textShadow: animationComplete ? '0 2px 4px rgba(255,255,255,0.1)' : 'none',
