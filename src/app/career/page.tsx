@@ -15,7 +15,7 @@ export default function Career() {
           </h1>
           <div className="w-24 h-1 bg-white mx-auto mb-8 rounded-full"></div>
           
-          <div className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700">
+          <div className="p-8 md:p-12">
             <h2 className="text-3xl font-bold text-white mb-6">Join Our Creative Team</h2>
             <p className="text-lg text-gray-300">Career opportunities coming soon. Stay tuned for exciting positions!</p>
           </div>

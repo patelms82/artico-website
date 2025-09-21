@@ -97,22 +97,23 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             >
               <motion.a
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="/contact"
-                className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full shadow-2xl overflow-hidden transition-all duration-300"
+                className="group relative px-8 py-4 border-2 border-gray-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-200 bg-gradient-to-r from-gray-900 to-black"
               >
-                <span className="relative z-10">Start Your Project</span>
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">Start Your Project</span>
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
               </motion.a>
               
               <motion.a
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="/portfolio"
-                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                className="group relative px-8 py-4 border-2 border-gray-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-200 bg-gradient-to-r from-gray-900 to-black"
               >
-                View Portfolio
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">View Portfolio</span>
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
               </motion.a>
             </motion.div>
           </div>
@@ -172,19 +173,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="text-center bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-white border border-gray-800/50 shadow-2xl"
+            className="text-center"
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Ready to Transform Your Brand?
             </h3>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl mb-8 opacity-90 text-white">
               Let&apos;s collaborate to bring your vision to life with cutting-edge design and innovation.
             </p>
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href="/contact"
-              className="inline-block px-10 py-4 bg-white text-black font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="group relative inline-block px-10 py-4 bg-gradient-to-r from-white to-gray-100 text-black font-bold rounded-full transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white shadow-lg hover:shadow-xl border border-transparent hover:border-gray-600"
             >
               Get Started Today
             </motion.a>
@@ -352,7 +353,7 @@ function AnimatedStatCard({
         type: "tween",
         ease: "easeOut"
       }}
-      className="text-center p-8 bg-gray-900/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-800/50"
+      className="text-center p-8"
     >
       {/* Content */}
       <div className="relative z-10">

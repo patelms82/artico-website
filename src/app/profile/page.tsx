@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
 // Performance optimization: Check for reduced motion preference
 const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -116,23 +117,17 @@ export default function Profile() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20"
           >
             {[
-              { label: 'Successful Launches', value: '40+' },
-              { label: 'Documentation Systems', value: '25+' },
-              { label: 'Avg. Engagement Lift', value: '35%' },
+              { label: 'Successful Launches', value: 40, suffix: '+' },
+              { label: 'Documentation Systems', value: 25, suffix: '+' },
+              { label: 'Avg. Engagement Lift', value: 35, suffix: '%' },
             ].map((m, i) => (
-              <motion.div
+              <AnimatedStatCard
                 key={m.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: 0.75 + i * 0.1 }}
-                className="bg-gray-900/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-800 text-center"
-              >
-                <div className="text-3xl font-extrabold text-white mb-2">
-                  {m.value}
-                </div>
-                <div className="text-gray-300 font-medium tracking-wide text-sm">{m.label}</div>
-              </motion.div>
+                targetNumber={m.value}
+                suffix={m.suffix}
+                label={m.label}
+                delay={0.75 + i * 0.1}
+              />
             ))}
           </motion.div>
 
@@ -143,21 +138,76 @@ export default function Profile() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 }}
             className="text-center"
           >
-            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
+            <div className="p-12 text-white">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Build Consistency</h3>
               <p className="text-xl mb-8 opacity-90">Extend your brand into a scalable digital system.</p>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a
                 href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+                className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
               >
                 Start a Conversation
-              </motion.a>
+              </a>
             </div>
           </motion.div>
         </motion.div>
       </main>
     </div>
+  );
+}
+
+// Animated Stat Card Component
+function AnimatedStatCard({ 
+  targetNumber, 
+  suffix = "", 
+  label, 
+  delay = 0 
+}: {
+  targetNumber: number;
+  suffix?: string;
+  label: string;
+  delay?: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.5
+  });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        const controls = animate(count, targetNumber, {
+          duration: 1.5,
+          ease: "easeOut"
+        });
+        return controls.stop;
+      }, delay * 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, count, targetNumber, delay]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: delay * 0.1,
+        type: "tween",
+        ease: "easeOut"
+      }}
+      className="text-center p-6"
+    >
+      <div className="text-3xl font-extrabold text-white mb-2">
+        <motion.span>{rounded}</motion.span>
+        <span>{suffix}</span>
+      </div>
+      <div className="text-gray-300 font-medium tracking-wide text-sm">{label}</div>
+    </motion.div>
   );
 }

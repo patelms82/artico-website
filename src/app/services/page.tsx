@@ -166,21 +166,19 @@ export default function Services() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
+            <div className="p-12 text-white">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Get Started?
               </h3>
               <p className="text-xl mb-8 opacity-90">
                 Let&apos;s discuss your project and bring your creative vision to life.
               </p>
-              <motion.a
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+              <a
                 href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-200 inline-block"
+                className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
               >
                 Contact Us Today
-              </motion.a>
+              </a>
             </div>
           </motion.div>
         </motion.div>

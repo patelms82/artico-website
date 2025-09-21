@@ -60,7 +60,7 @@ export default function Clients() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.55 + i * 0.1 }}
-                className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-700 text-center"
+                className="p-6 text-center"
               >
                 <div className="text-3xl font-extrabold text-white">
                   {item.value}
@@ -75,7 +75,7 @@ export default function Clients() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16 text-center"
+            className="p-8 md:p-12 mb-16 text-center"
           >
             <h2 className="text-3xl font-bold text-white mb-6">Showcase Coming Soon</h2>
             <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -88,18 +88,6 @@ export default function Clients() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center"
           >
-            <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Become Part of Our Story</h3>
-              <p className="text-xl mb-8 opacity-90">Let&apos;s build something remarkable for your brand.</p>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
-              >
-                Start a Project
-              </motion.a>
-            </div>
           </motion.div>
         </motion.div>
       </main>

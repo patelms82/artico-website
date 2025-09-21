@@ -182,7 +182,7 @@ export default function Portfolio() {
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
-            className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 mb-16"
+            className="p-8 md:p-12 mb-16"
           >
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white mb-6">Portfolio Gallery Coming Soon</h2>
@@ -201,21 +201,19 @@ export default function Portfolio() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 }}
             className="text-center"
           >
-            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
+            <div className="p-12 text-white">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Let&apos;s Create Your Next Project
               </h3>
               <p className="text-xl mb-8 opacity-90">
                 Ready to join our portfolio of successful brands and creative achievements?
               </p>
-              <motion.a
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+              <a
                 href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-200 inline-block"
+                className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
               >
                 Start Your Project
-              </motion.a>
+              </a>
             </div>
           </motion.div>
         </motion.div>

@@ -119,14 +119,12 @@ export default function About() {
             <p className="text-xl mb-8 opacity-90 text-white">
               Let&apos;s bring your creative vision to life with our expertise and passion.
             </p>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a
               href="/contact"
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+              className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
             >
               Get In Touch
-            </motion.a>
+            </a>
           </motion.div>
         </motion.div>
       </main>

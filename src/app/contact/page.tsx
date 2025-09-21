@@ -59,9 +59,10 @@ export default function Contact() {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
           >
             {/* Email Card */}
-            <motion.div
+            <motion.a
+              href="mailto:patelms82@gmail.com"
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700"
+              className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-800 block"
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-gray-900 text-2xl">
@@ -72,22 +73,22 @@ export default function Contact() {
                   <p className="text-gray-400">Send us a message anytime</p>
                 </div>
               </div>
-              <a 
-                href="mailto:patelms82@gmail.com"
-                className="text-lg text-white hover:text-gray-300 font-semibold block mb-4"
-              >
+              <div className="text-lg text-white hover:text-gray-300 font-semibold block mb-4">
                 patelms82@gmail.com
-              </a>
+              </div>
               <p className="text-gray-300">
                 Whether you have a project in mind or just want to say hello, 
                 we&apos;d love to hear from you!
               </p>
-            </motion.div>
+            </motion.a>
 
             {/* LinkedIn Card */}
-            <motion.div
+            <motion.a
+              href="https://www.linkedin.com/in/mukesh-patel-9a270420/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700"
+              className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-800 block"
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-gray-900 text-2xl">
@@ -98,19 +99,14 @@ export default function Contact() {
                   <p className="text-gray-400">Connect professionally</p>
                 </div>
               </div>
-              <a 
-                href="https://www.linkedin.com/in/mukesh-patel-9a270420/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg text-white hover:text-gray-300 font-semibold block mb-4"
-              >
+              <div className="text-lg text-white hover:text-gray-300 font-semibold block mb-4">
                 mukesh-patel-9a270420
-              </a>
+              </div>
               <p className="text-gray-300">
                 Connect with us on LinkedIn for professional networking 
                 and business opportunities.
               </p>
-            </motion.div>
+            </motion.a>
           </motion.div>
 
           {/* Location & Info */}
@@ -169,21 +165,19 @@ export default function Contact() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
+            <div className="p-12 text-white">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Start Your Project?
               </h3>
               <p className="text-xl mb-8 opacity-90">
                 Let&apos;s schedule a consultation and discuss how we can bring your vision to life.
               </p>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a
                 href="mailto:patelms82@gmail.com"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+                className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
               >
                 Send Message Now
-              </motion.a>
+              </a>
             </div>
           </motion.div>
         </motion.div>
