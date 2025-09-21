@@ -67,7 +67,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 max-w-4xl mx-auto"
+            className="bg-black rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 max-w-4xl mx-auto"
           >
             <div className="space-y-6">
               <h3 className="text-lg font-bold text-white mb-6 text-center">Creative Excellence Since 2000</h3>
@@ -87,7 +87,7 @@ export default function About() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-gray-800 rounded-2xl p-6">
+                <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
                   <h3 className="text-xl font-semibold text-white mb-3">Our Mission</h3>
                   <p className="text-gray-300">
                     To create extraordinary brand experiences that inspire, engage, and drive meaningful connections 
@@ -95,7 +95,7 @@ export default function About() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-800 rounded-2xl p-6">
+                <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
                   <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
                   <p className="text-gray-300">
                     To be the leading creative force that transforms ideas into powerful visual narratives 
@@ -113,22 +113,20 @@ export default function About() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="text-center mt-16"
           >
-            <div className="bg-black rounded-3xl p-12 text-white shadow-2xl">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Work Together?
-              </h3>
-              <p className="text-xl mb-8 opacity-90">
-                Let&apos;s bring your creative vision to life with our expertise and passion.
-              </p>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
-              >
-                Get In Touch
-              </motion.a>
-            </div>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Ready to Work Together?
+            </h3>
+            <p className="text-xl mb-8 opacity-90 text-white">
+              Let&apos;s bring your creative vision to life with our expertise and passion.
+            </p>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/contact"
+              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+            >
+              Get In Touch
+            </motion.a>
           </motion.div>
         </motion.div>
       </main>
