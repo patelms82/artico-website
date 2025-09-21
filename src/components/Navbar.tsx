@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="bg-gray-900 shadow-lg fixed w-full z-50 top-0 left-0 border-b border-gray-800"
+      className="bg-black shadow-lg fixed w-full z-50 top-0 left-0 border-b border-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -139,7 +139,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden bg-gray-900 border-t border-gray-800"
+              className="md:hidden overflow-hidden bg-black border-t border-gray-900"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navLinks.map((link, index) => {
@@ -155,7 +155,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={closeMenu}
-                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-white bg-gray-800' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
+                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-white bg-gray-900' : 'text-gray-300 hover:text-white hover:bg-gray-900'}`}
                       >
                         {link.name}
                       </Link>

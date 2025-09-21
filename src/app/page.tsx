@@ -33,12 +33,12 @@ const skills = [
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
+    <div className="bg-black relative overflow-hidden min-h-screen">
       {/* Background decorative elements (dark theme) */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-700 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-900 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10">
@@ -352,7 +352,7 @@ function AnimatedStatCard({
         type: "tween",
         ease: "easeOut"
       }}
-      className="text-center p-8 bg-gray-800/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-700/50"
+      className="text-center p-8 bg-gray-900/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-800/50"
     >
       {/* Content */}
       <div className="relative z-10">

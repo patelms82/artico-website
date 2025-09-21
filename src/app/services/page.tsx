@@ -77,12 +77,12 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
+    <div className="bg-black relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-900 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -133,7 +133,7 @@ export default function Services() {
                 initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.4, delay: 0.4 + categoryIndex * 0.1 }}
-                className="bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700/50"
+                className="bg-gray-900/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-800/50"
               >
                 {/* Category Header */}
                 <div className="flex items-center mb-6">
@@ -148,7 +148,7 @@ export default function Services() {
                   {category.services.map((service) => (
                     <div
                       key={service}
-                      className="flex items-center py-2 px-4 rounded-xl bg-gray-700/30 text-gray-300"
+                      className="flex items-center py-2 px-4 rounded-xl bg-gray-800/30 text-gray-300"
                     >
                       <FaCircle className="w-2 h-2 text-white mr-4 opacity-70" />
                       <span className="text-lg font-medium">{service}</span>
@@ -166,7 +166,7 @@ export default function Services() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
+            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Get Started?
               </h3>

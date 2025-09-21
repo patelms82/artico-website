@@ -7,12 +7,12 @@ const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(
 
 export default function Contact() {
   return (
-    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
+    <div className="bg-black relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-900 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -118,7 +118,7 @@ export default function Contact() {
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.4 }}
-            className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16"
+            className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -169,7 +169,7 @@ export default function Contact() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
+            <div className="bg-gray-900 rounded-3xl p-12 text-white shadow-2xl border border-gray-800">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Start Your Project?
               </h3>

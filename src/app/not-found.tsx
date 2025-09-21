@@ -8,12 +8,12 @@ const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(
 
 export default function NotFound() {
   return (
-    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
+    <div className="bg-black relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl opacity-30"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-900 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl opacity-30"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20 min-h-screen flex items-center justify-center">
@@ -63,11 +63,11 @@ export default function NotFound() {
               Even our best designers couldn&apos;t find this page! But don&apos;t worry, 
               we&apos;ve got plenty of amazing content waiting for you.
             </p>
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto border border-gray-700/50">
+            <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto border border-gray-800/50">
               <p className="text-gray-400 italic">
                 &ldquo;Every great design starts with an even better story. Let&apos;s write yours.&rdquo;
               </p>
-              <p className="text-gray-500 text-sm mt-2">- Artico Idea Creative Team</p>
+              <p className="text-gray-500 text-sm mt-2">- Artico Imagination Creative Team</p>
             </div>
           </motion.div>
 
@@ -78,7 +78,7 @@ export default function NotFound() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.4 }}
             className="mb-12"
           >
-            <div className="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30">
+            <div className="bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-800/30">
               <div className="flex items-center justify-center mb-4">
                 <FaSearch className="text-2xl text-gray-400 mr-3" />
                 <h3 className="text-xl font-semibold text-white">Looking for something specific?</h3>
@@ -91,7 +91,7 @@ export default function NotFound() {
                   Portfolio Gallery
                 </Link>
                 <Link href="/about" className="text-green-400 hover:text-green-300 transition-colors">
-                  About Artico Idea
+                  About Artico Imagination
                 </Link>
                 <Link href="/contact" className="text-yellow-400 hover:text-yellow-300 transition-colors">
                   Get In Touch
@@ -141,7 +141,7 @@ export default function NotFound() {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 }}
             className="mt-16"
           >
-            <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-800">
               <h3 className="text-2xl font-bold text-white mb-4">
                 While You&apos;re Here...
               </h3>

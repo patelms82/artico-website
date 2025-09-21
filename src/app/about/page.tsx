@@ -6,12 +6,12 @@ const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(
 
 export default function About() {
   return (
-    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
+    <div className="bg-black relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-700 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-900 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -32,7 +32,7 @@ export default function About() {
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
                 About
                 <br />
-                Artico Idea
+                Artico Imagination
               </h1>
               <div className="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
             </motion.div>
@@ -43,13 +43,13 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 max-w-4xl mx-auto"
+            className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 max-w-4xl mx-auto"
           >
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6">Creative Excellence Since 2000</h2>
               
               <p className="text-lg text-gray-300 leading-relaxed">
-                Artico Idea is a premier creative agency founded and led by <span className="text-white font-semibold">Mukesh Patel</span>, 
+                Artico Imagination is a premier creative agency founded and led by <span className="text-white font-semibold">Mukesh Patel</span>, 
                 based in Ahmedabad, India, with extensive experience working across India and globally. 
                 Under his visionary leadership, we are passionate about helping brands grow through 
                 innovative design, strategic marketing, and artistic excellence.
@@ -57,13 +57,13 @@ export default function About() {
               
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our journey began with Mukesh&apos;s vision to transform how brands communicate with their audiences. 
-                With over two decades of creative expertise, he has built Artico Idea into a trusted partner 
+                With over two decades of creative expertise, he has built Artico Imagination into a trusted partner 
                 for businesses seeking exceptional design solutions. Today, we continue to push boundaries in 
                 creativity, combining traditional art forms with cutting-edge digital technologies.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-gray-700 rounded-2xl p-6">
+                <div className="bg-gray-800 rounded-2xl p-6">
                   <h3 className="text-xl font-semibold text-white mb-3">Our Mission</h3>
                   <p className="text-gray-300">
                     To create extraordinary brand experiences that inspire, engage, and drive meaningful connections 
@@ -71,7 +71,7 @@ export default function About() {
                   </p>
                 </div>
                 
-                <div className="bg-gray-700 rounded-2xl p-6">
+                <div className="bg-gray-800 rounded-2xl p-6">
                   <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
                   <p className="text-gray-300">
                     To be the leading creative force that transforms ideas into powerful visual narratives 

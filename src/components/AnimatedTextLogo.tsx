@@ -59,7 +59,7 @@ export default function AnimatedTextLogo() {
   return (
     <div className="relative flex flex-col items-center justify-center h-[50vh] min-h-[400px] max-h-[600px] w-full overflow-hidden">
       {/* Animated Background Container */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-black">
         
         {/* Floating Geometric Shapes */}
         <div className="absolute inset-0">

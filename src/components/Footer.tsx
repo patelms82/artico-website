@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-black/95 via-gray-900/95 to-black/95 backdrop-blur-sm text-white py-6 sm:py-8 w-full border-t border-gray-800/60">
+    <footer className="bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-sm text-white py-6 sm:py-8 w-full border-t border-gray-900/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 items-center">
           {/* Left - Logo */}

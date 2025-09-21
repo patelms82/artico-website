@@ -6,11 +6,11 @@ const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(
 
 export default function Clients() {
   return (
-    <div className="relative overflow-hidden min-h-screen bg-gray-900">
+    <div className="relative overflow-hidden min-h-screen bg-black">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-800 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-900 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-800 rounded-full blur-2xl" />
       </div>
       <main className="relative z-10 px-4 py-20">
         <motion.div
