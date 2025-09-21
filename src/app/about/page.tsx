@@ -49,15 +49,17 @@ export default function About() {
               <h2 className="text-3xl font-bold text-white mb-6">Creative Excellence Since 2000</h2>
               
               <p className="text-lg text-gray-300 leading-relaxed">
-                Artico Idea is a premier creative agency based in Ahmedabad, India, with extensive experience 
-                working across India and globally. We are passionate about helping brands grow through 
+                Artico Idea is a premier creative agency founded and led by <span className="text-white font-semibold">Mukesh Patel</span>, 
+                based in Ahmedabad, India, with extensive experience working across India and globally. 
+                Under his visionary leadership, we are passionate about helping brands grow through 
                 innovative design, strategic marketing, and artistic excellence.
               </p>
               
               <p className="text-lg text-gray-300 leading-relaxed">
-                Our journey began with a vision to transform how brands communicate with their audiences. 
-                Today, we continue to push boundaries in creativity, combining traditional art forms with 
-                cutting-edge digital technologies.
+                Our journey began with Mukesh&apos;s vision to transform how brands communicate with their audiences. 
+                With over two decades of creative expertise, he has built Artico Idea into a trusted partner 
+                for businesses seeking exceptional design solutions. Today, we continue to push boundaries in 
+                creativity, combining traditional art forms with cutting-edge digital technologies.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">

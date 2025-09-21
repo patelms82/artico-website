@@ -1,33 +1,79 @@
 "use client";
 import { motion } from 'framer-motion';
+import { 
+  FaPalette, 
+  FaCamera, 
+  FaPrint, 
+  FaMagic, 
+  FaCogs,
+  FaCircle 
+} from 'react-icons/fa';
 
 // Performance optimization: Check for reduced motion preference
 const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function Services() {
-  const services = [
-    'Logos',
-    'Brand Development',
-    'Print Identity',
-    'Resin Flooring',
-    'Product Photography',
-    'Fashion Photography',
-    'Corporate Video/Shoot',
-    'Advertising Film Production',
-    'Short Film',
-    'Brochures',
-    'Catalogues',
-    'Digital Identity',
-    'Digital Marketing',
-    '3D Visualization',
-    'Photoshop Visual Creations',
-    'Poster Design',
-    'Brand Campaign Design',
-    'Exhibition Stand Design',
-    'Interior Designing',
-    'Art (Painting)',
-    'The Art Consultant',
-    'And Many More',
+  const serviceCategories = [
+    {
+      category: "Brand & Identity",
+      icon: FaPalette,
+      iconColor: "text-blue-400",
+      services: [
+        'Logo Design',
+        'Brand Development',
+        'Print Identity',
+        'Digital Identity',
+        'Brand Campaign Design'
+      ]
+    },
+    {
+      category: "Photography & Video",
+      icon: FaCamera,
+      iconColor: "text-purple-400",
+      services: [
+        'Product Photography',
+        'Fashion Photography',
+        'Corporate Video/Shoot',
+        'Advertising Film Production',
+        'Short Film'
+      ]
+    },
+    {
+      category: "Print & Marketing",
+      icon: FaPrint,
+      iconColor: "text-green-400",
+      services: [
+        'Brochures',
+        'Catalogues',
+        'Poster Design',
+        'Digital Marketing',
+        'Exhibition Stand Design'
+      ]
+    },
+    {
+      category: "Creative & Visual",
+      icon: FaMagic,
+      iconColor: "text-yellow-400",
+      services: [
+        '3D Visualization',
+        'Photoshop Visual Creations',
+        'Interior Designing',
+        'Art & Painting',
+        'The Art Consultant'
+      ]
+    },
+    {
+      category: "Specialized Services",
+      icon: FaCogs,
+      iconColor: "text-orange-400",
+      services: [
+        'Resin Flooring',
+        'Custom Solutions',
+        'Creative Consulting',
+        'Project Management',
+        'And Many More'
+      ]
+    }
   ];
 
   return (
@@ -49,9 +95,9 @@ export default function Services() {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.1 }}
               className="mb-8"
             >
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
@@ -63,35 +109,51 @@ export default function Services() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.2 }}
               className="mb-8"
             >
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Comprehensive creative solutions designed to elevate your brand and transform your business vision into reality.
+                Comprehensive creative solutions organized by expertise to elevate your brand and transform your vision into reality.
               </p>
             </motion.div>
           </div>
         
-          {/* Services Grid */}
+          {/* Services Categories */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.3 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
           >
-            {services.map((service, index) => (
+            {serviceCategories.map((category, categoryIndex) => (
               <motion.div
-                key={service}
-                initial={{ opacity: 0, y: 20 }}
+                key={category.category}
+                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
+                transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.4, delay: 0.4 + categoryIndex * 0.1 }}
+                className="bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700/50"
               >
-                <div className="text-lg font-semibold text-white text-center">
-                  {service}
+                {/* Category Header */}
+                <div className="flex items-center mb-6">
+                  <div className={`text-3xl mr-4 ${category.iconColor}`}>
+                    <category.icon />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">{category.category}</h3>
+                </div>
+
+                {/* Services List */}
+                <div className="space-y-3">
+                  {category.services.map((service) => (
+                    <div
+                      key={service}
+                      className="flex items-center py-2 px-4 rounded-xl bg-gray-700/30 text-gray-300"
+                    >
+                      <FaCircle className="w-2 h-2 text-white mr-4 opacity-70" />
+                      <span className="text-lg font-medium">{service}</span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             ))}
@@ -99,9 +161,9 @@ export default function Services() {
 
           {/* Call to Action */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
             <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
@@ -112,10 +174,10 @@ export default function Services() {
                 Let&apos;s discuss your project and bring your creative vision to life.
               </p>
               <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-200 inline-block"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-200 inline-block"
               >
                 Contact Us Today
               </motion.a>
