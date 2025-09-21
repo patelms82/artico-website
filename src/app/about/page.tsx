@@ -41,8 +41,8 @@ export default function About() {
                 <Image
                   src="/images/mukesh_photo.jpg"
                   alt="Mukesh Patel - Founder of Artico Imagination"
-                  width={500}
-                  height={600}
+                  width={300}
+                  height={400}
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
               </div>
