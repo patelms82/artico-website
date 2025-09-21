@@ -20,63 +20,63 @@ export default function Portfolio() {
     {
       category: "Brand Identity",
       icon: FaBrush,
-      iconColor: "text-blue-400",
+      iconColor: "text-red-500",
       description: "Logo design, brand guidelines, and visual identity systems",
       projects: ["25+ Brand Identities", "Logo Designs", "Brand Guidelines", "Visual Systems"]
     },
     {
       category: "Photography",
       icon: FaCamera,
-      iconColor: "text-purple-400",
+      iconColor: "text-red-500",
       description: "Product, fashion, and corporate photography sessions",
       projects: ["Product Shoots", "Fashion Photography", "Corporate Portraits", "Event Coverage"]
     },
     {
       category: "Video Production",
       icon: FaVideo,
-      iconColor: "text-red-400",
+      iconColor: "text-red-500",
       description: "Corporate videos, advertisements, and short films",
       projects: ["Corporate Videos", "Ad Campaigns", "Short Films", "Motion Graphics"]
     },
     {
       category: "Marketing Campaigns",
       icon: FaBullhorn,
-      iconColor: "text-green-400",
+      iconColor: "text-red-500",
       description: "Digital marketing and advertising campaign designs",
       projects: ["Ad Campaigns", "Social Media", "Email Marketing", "Content Strategy"]
     },
     {
       category: "Exhibition Design",
       icon: FaStore,
-      iconColor: "text-yellow-400",
+      iconColor: "text-red-500",
       description: "Trade show booths and exhibition stand designs",
       projects: ["Trade Show Booths", "Exhibition Stands", "Display Design", "Event Setups"]
     },
     {
       category: "Interior Design",
       icon: FaHome,
-      iconColor: "text-indigo-400",
+      iconColor: "text-red-500",
       description: "Residential and commercial interior design projects",
       projects: ["Residential Design", "Commercial Spaces", "Office Interiors", "Retail Design"]
     },
     {
       category: "Art & Paintings",
       icon: FaPaintBrush,
-      iconColor: "text-pink-400",
+      iconColor: "text-red-500",
       description: "Original artwork and custom painting commissions",
       projects: ["Original Artwork", "Custom Paintings", "Art Consulting", "Gallery Exhibitions"]
     },
     {
       category: "Digital Design",
       icon: FaLaptop,
-      iconColor: "text-cyan-400",
+      iconColor: "text-red-500",
       description: "Web design, UI/UX, and digital experiences",
       projects: ["Website Design", "UI/UX Design", "Digital Assets", "App Interfaces"]
     },
     {
       category: "Print Design",
       icon: FaFileAlt,
-      iconColor: "text-orange-400",
+      iconColor: "text-red-500",
       description: "Brochures, catalogues, and print marketing materials",
       projects: ["Brochures", "Catalogues", "Business Cards", "Marketing Materials"]
     }

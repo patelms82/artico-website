@@ -17,7 +17,7 @@ export default function Services() {
     {
       category: "Brand & Identity",
       icon: FaPalette,
-      iconColor: "text-blue-400",
+      iconColor: "text-red-500",
       services: [
         'Logo Design',
         'Brand Development',
@@ -29,7 +29,7 @@ export default function Services() {
     {
       category: "Photography & Video",
       icon: FaCamera,
-      iconColor: "text-purple-400",
+      iconColor: "text-red-500",
       services: [
         'Product Photography',
         'Fashion Photography',
@@ -41,7 +41,7 @@ export default function Services() {
     {
       category: "Print & Marketing",
       icon: FaPrint,
-      iconColor: "text-green-400",
+      iconColor: "text-red-500",
       services: [
         'Brochures',
         'Catalogues',
@@ -53,7 +53,7 @@ export default function Services() {
     {
       category: "Creative & Visual",
       icon: FaMagic,
-      iconColor: "text-yellow-400",
+      iconColor: "text-red-500",
       services: [
         '3D Visualization',
         'Photoshop Visual Creations',
@@ -65,7 +65,7 @@ export default function Services() {
     {
       category: "Specialized Services",
       icon: FaCogs,
-      iconColor: "text-orange-400",
+      iconColor: "text-red-500",
       services: [
         'Resin Flooring',
         'Custom Solutions',
