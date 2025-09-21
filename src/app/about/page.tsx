@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 // Performance optimization: Check for reduced motion preference
 const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -45,8 +46,43 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-800 max-w-4xl mx-auto"
           >
+            {/* Owner Introduction Section */}
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex-shrink-0"
+              >
+                <div className="relative">
+                  <Image
+                    src="/images/mukesh_photo.jpg"
+                    alt="Mukesh Patel - Owner & Manager of Artico Imagination"
+                    width={200}
+                    height={200}
+                    className="rounded-full object-cover shadow-2xl border-4 border-white/10"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex-1 text-center md:text-left"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Mukesh Patel</h2>
+                <p className="text-xl text-red-500 font-semibold mb-4">Owner & Manager</p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Visionary leader and creative director behind Artico Imagination, bringing over two decades 
+                  of artistic excellence and strategic innovation to every project.
+                </p>
+              </motion.div>
+            </div>
+
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white mb-6">Creative Excellence Since 2000</h2>
+              <h3 className="text-3xl font-bold text-white mb-6">Creative Excellence Since 2000</h3>
               
               <p className="text-lg text-gray-300 leading-relaxed">
                 Artico Imagination is a premier creative agency founded and led by <span className="text-white font-semibold">Mukesh Patel</span>, 
