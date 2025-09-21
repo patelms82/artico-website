@@ -1,5 +1,6 @@
 ﻿"use client";
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import AnimatedTextLogo from "@/components/AnimatedTextLogo";
 
 const skills = [
@@ -113,44 +114,24 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Skills Grid */}
+          {/* Skills Animated Showcase */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
             className="mb-20"
           >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="text-center mb-12 px-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                 Creative <span className="text-gray-300">Expertise</span>
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
                 Comprehensive creative solutions spanning design, technology, and artistic innovation
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.2 + index * 0.03 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="group relative p-6 bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-white/20"
-                >
-                  <div className="absolute inset-0 bg-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-8 h-8 bg-white rounded-lg mb-3 flex items-center justify-center">
-                      <div className="w-4 h-4 bg-black rounded-sm"></div>
-                    </div>
-                    <h3 className="font-semibold text-white text-sm leading-snug">
-                      {skill}
-                    </h3>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Scroll-triggered Skills Animation */}
+            <SkillsRevealSection />
           </motion.div>
 
           {/* Stats Section */}
@@ -208,6 +189,110 @@ export default function Home() {
         </motion.div>
         </div>
       </main>
+    </div>
+  );
+}
+
+// Skills Reveal Section Component
+function SkillsRevealSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const skillVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 60,
+      scale: 0.8
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+        duration: 0.6
+      }
+    }
+  };
+
+  return (
+    <div ref={ref} className="relative max-w-5xl mx-auto px-4 sm:px-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6"
+      >
+        {skills.map((skill) => (
+          <motion.div
+            key={skill}
+            variants={skillVariants}
+            whileHover={{ 
+              scale: 1.05,
+              y: -5,
+              transition: { type: "spring" as const, stiffness: 400 }
+            }}
+            className="group relative"
+          >
+            {/* Skill Tag */}
+            <div className="relative px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-600/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 rounded-xl sm:rounded-2xl transition-opacity duration-300"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex items-center space-x-2 sm:space-x-3">
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-white to-gray-300 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="text-white font-medium text-xs sm:text-sm md:text-base whitespace-nowrap group-hover:text-white transition-colors duration-300">
+                  {skill}
+                </span>
+              </div>
+
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Floating particles effect - reduced for mobile */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {isInView && [...Array(3)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ 
+              opacity: [0, 0.6, 0],
+              scale: [0, 1, 0],
+              x: [0, Math.random() * 150 - 75],
+              y: [0, Math.random() * 150 - 75]
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              delay: Math.random() * 3,
+              repeat: Infinity,
+              repeatDelay: 6 + Math.random() * 4
+            }}
+            className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
