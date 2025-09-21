@@ -50,7 +50,7 @@ export default function AnimatedTextLogo() {
           <span className="text-gray-300">Come Alive</span>
         </div>
         <div className="mt-8 text-sm tracking-[0.3em] text-white/40 font-light uppercase text-center">
-          Creative Studio
+          beyond your Imagination
         </div>
       </div>
     );
@@ -457,7 +457,7 @@ export default function AnimatedTextLogo() {
           ease: "easeOut"
         }}
       >
-        Creative Studio
+        beyond your Imagination
       </motion.div>
 
       {/* Interactive Hover Effect */}
