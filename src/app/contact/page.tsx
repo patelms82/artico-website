@@ -4,12 +4,12 @@ import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <div className="bg-white relative overflow-hidden min-h-screen">
+    <div className="bg-gray-900 relative overflow-hidden min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-200 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl"></div>
       </div>
 
       <main className="relative z-10 px-4 py-20">
@@ -27,12 +27,12 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-8"
             >
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-black">
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
                 Get In
                 <br />
                 Touch
               </h1>
-              <div className="w-24 h-1 bg-black mx-auto mb-6 rounded-full"></div>
+              <div className="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
             </motion.div>
 
             <motion.div
@@ -41,7 +41,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mb-8"
             >
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Ready to transform your brand? Let&apos;s collaborate and bring your creative vision to life 
                 with our expertise and passion for excellence.
               </p>
@@ -58,24 +58,24 @@ export default function Contact() {
             {/* Email Card */}
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/50"
+              className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700"
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-gray-900 text-2xl">
                   <FaEnvelope />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-gray-800">Email Us</h3>
-                  <p className="text-gray-600">Send us a message anytime</p>
+                  <h3 className="text-2xl font-bold text-white">Email Us</h3>
+                  <p className="text-gray-400">Send us a message anytime</p>
                 </div>
               </div>
               <a 
                 href="mailto:patelms82@gmail.com"
-                className="text-lg text-black hover:text-gray-700 font-semibold block mb-4"
+                className="text-lg text-white hover:text-gray-300 font-semibold block mb-4"
               >
                 patelms82@gmail.com
               </a>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Whether you have a project in mind or just want to say hello, 
                 we&apos;d love to hear from you!
               </p>
@@ -84,26 +84,26 @@ export default function Contact() {
             {/* LinkedIn Card */}
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/50"
+              className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-700"
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-gray-900 text-2xl">
                   <FaLinkedin />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-gray-800">LinkedIn</h3>
-                  <p className="text-gray-600">Connect professionally</p>
+                  <h3 className="text-2xl font-bold text-white">LinkedIn</h3>
+                  <p className="text-gray-400">Connect professionally</p>
                 </div>
               </div>
               <a 
                 href="https://www.linkedin.com/in/mukesh-patel-9a270420/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg text-black hover:text-gray-700 font-semibold block mb-4"
+                className="text-lg text-white hover:text-gray-300 font-semibold block mb-4"
               >
                 mukesh-patel-9a270420
               </a>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Connect with us on LinkedIn for professional networking 
                 and business opportunities.
               </p>
@@ -115,20 +115,20 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 mb-16"
+            className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white text-xl">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 text-xl">
                     <FaMapMarkerAlt />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 ml-4">Our Location</h3>
+                  <h3 className="text-2xl font-bold text-white ml-4">Our Location</h3>
                 </div>
-                <p className="text-lg text-gray-700 mb-4">
+                <p className="text-lg text-gray-300 mb-4">
                   <strong>Ahmedabad, India</strong>
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Based in the vibrant city of Ahmedabad, we serve clients 
                   across India and globally, bringing creativity and 
                   innovation to every project.
@@ -136,22 +136,22 @@ export default function Contact() {
               </div>
               
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Why Choose Us?</h3>
-                <ul className="space-y-3 text-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
+                <ul className="space-y-3 text-gray-300">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                     Creative excellence since 2000
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gray-700 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-300 rounded-full mr-3"></div>
                     Global experience, local expertise
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
                     Comprehensive creative solutions
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
                     Personalized service approach
                   </li>
                 </ul>
@@ -166,7 +166,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="text-center"
           >
-            <div className="bg-black rounded-3xl p-12 text-white shadow-2xl">
+            <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Start Your Project?
               </h3>

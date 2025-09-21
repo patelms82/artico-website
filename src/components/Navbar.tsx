@@ -61,14 +61,14 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="bg-white shadow-lg fixed w-full z-50 top-0 left-0 border-b border-gray-200"
+      className="bg-gray-900 shadow-lg fixed w-full z-50 top-0 left-0 border-b border-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/artico_logo_black.png"
+              src="/images/artico_logo_white.png"
               alt="Artico Imagination Logo"
               width={120}
               height={40}
@@ -85,17 +85,17 @@ export default function Navbar() {
                 <div key={link.name} className="relative group">
                   <Link
                     href={link.href}
-                    className={`font-medium transition-colors duration-200 ${active ? 'text-black' : 'text-gray-800 hover:text-black'}`}
+                    className={`font-medium transition-colors duration-200 ${active ? 'text-white' : 'text-gray-300 hover:text-white'}`}
                   >
                     {link.name}
                   </Link>
                   {/* Static underline for active */}
                   {active && (
-                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-black rounded-full" />
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-white rounded-full" />
                   )}
                   {/* Hover underline (only shows when not active) */}
                   {!active && (
-                    <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-black rounded-full transition-all duration-300 group-hover:w-full" />
+                    <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-white rounded-full transition-all duration-300 group-hover:w-full" />
                   )}
                 </div>
               );
@@ -115,17 +115,17 @@ export default function Navbar() {
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="block absolute h-0.5 w-6 bg-gray-700 transform transition duration-300 ease-in-out"
+                className="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out"
               />
               <motion.span
                 animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="block absolute h-0.5 w-6 bg-gray-700 transform transition duration-300 ease-in-out"
+                className="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out"
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 6 }}
                 transition={{ duration: 0.3 }}
-                className="block absolute h-0.5 w-6 bg-gray-700 transform transition duration-300 ease-in-out"
+                className="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out"
               />
             </button>
           </div>
@@ -139,7 +139,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden bg-white border-t border-gray-200"
+              className="md:hidden overflow-hidden bg-gray-900 border-t border-gray-800"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navLinks.map((link, index) => {
@@ -155,12 +155,12 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={closeMenu}
-                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-black bg-gray-100' : 'text-gray-800 hover:text-black hover:bg-gray-100'}`}
+                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all duration-200 ${active ? 'text-white bg-gray-800' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
                       >
                         {link.name}
                       </Link>
                       {active && (
-                        <span className="absolute left-3 right-3 bottom-1 h-0.5 bg-black rounded-full" />
+                        <span className="absolute left-3 right-3 bottom-1 h-0.5 bg-white rounded-full" />
                       )}
                     </motion.div>
                   );

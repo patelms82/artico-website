@@ -19,11 +19,11 @@ export default function Profile() {
   ];
 
   return (
-    <div className="relative overflow-hidden min-h-screen bg-white">
+    <div className="relative overflow-hidden min-h-screen bg-gray-900">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-200 rounded-full blur-2xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-700 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-800 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-700 rounded-full blur-2xl" />
       </div>
       <main className="relative z-10 px-4 py-20">
         <motion.div
@@ -40,18 +40,18 @@ export default function Profile() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="mb-8"
             >
-              <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-black">
+              <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
                 Studio
                 <br />
                 Profile
               </h1>
-              <div className="w-24 h-1 bg-black mx-auto rounded-full" />
+              <div className="w-24 h-1 bg-white mx-auto rounded-full" />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
               Artico Idea is a creative technology studio shaping cohesive brand and product experiences with strategic design, motion, and modern web engineering.
             </motion.p>
@@ -62,17 +62,17 @@ export default function Profile() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 mb-16"
+              className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16"
             >
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Who We Are</h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">Who We Are</h2>
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 We operate at the intersection of identity, interface, and interaction—building unified ecosystems instead of disconnected deliverables. Our approach blends strategic discovery with iterative design sprints and refined implementation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {capabilities.map((cap) => (
                   <div key={cap} className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-black" />
-                    <p className="text-gray-800 font-medium">{cap}</p>
+                    <span className="mt-1 h-2 w-2 rounded-full bg-white" />
+                    <p className="text-gray-300 font-medium">{cap}</p>
                   </div>
                 ))}
               </div>
@@ -85,7 +85,7 @@ export default function Profile() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Core Principles</h2>
+            <h2 className="text-3xl font-bold text-white text-center mb-10">Core Principles</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((v, i) => (
                 <motion.div
@@ -94,12 +94,12 @@ export default function Profile() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: 0.65 + i * 0.1 }}
-                  className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200"
+                  className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-700"
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-black">
+                  <h3 className="text-xl font-semibold mb-3 text-white">
                     {v.title}
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">{v.desc}</p>
+                  <p className="text-sm text-gray-300 leading-relaxed">{v.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -123,12 +123,12 @@ export default function Profile() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.75 + i * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 text-center"
+                className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-700 text-center"
               >
-                <div className="text-3xl font-extrabold text-black mb-2">
+                <div className="text-3xl font-extrabold text-white mb-2">
                   {m.value}
                 </div>
-                <div className="text-gray-700 font-medium tracking-wide text-sm">{m.label}</div>
+                <div className="text-gray-300 font-medium tracking-wide text-sm">{m.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -140,7 +140,7 @@ export default function Profile() {
             transition={{ duration: 0.8, delay: 0.85 }}
             className="text-center"
           >
-            <div className="bg-black rounded-3xl p-12 text-white shadow-2xl">
+            <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Build Consistency</h3>
               <p className="text-xl mb-8 opacity-90">Extend your brand into a scalable digital system.</p>
               <motion.a

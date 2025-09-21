@@ -41,12 +41,12 @@ export default function AnimatedTextLogo() {
   // Don't render complex animations until mounted to avoid hydration issues
   if (!isMounted) {
     return (
-      <div className="relative flex flex-col items-center justify-center py-16">
+      <div className="relative flex flex-col items-center justify-center h-[50vh] min-h-[400px] max-h-[600px] w-full">
         <div className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center">
-          <span className="text-black font-medium">Artico</span>{' '}
-          <span className="text-gray-700">Imagination</span>
+          <span className="text-white font-medium">Artico</span>{' '}
+          <span className="text-gray-300">Imagination</span>
         </div>
-        <div className="mt-8 text-sm tracking-[0.3em] text-black/40 font-light uppercase">
+        <div className="mt-8 text-sm tracking-[0.3em] text-white/40 font-light uppercase text-center">
           Creative Studio
         </div>
       </div>
@@ -54,9 +54,9 @@ export default function AnimatedTextLogo() {
   }
 
   return (
-    <div className="relative flex flex-col items-center justify-center py-16 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center h-[50vh] min-h-[400px] max-h-[600px] w-full overflow-hidden">
       {/* Animated Background Container */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black">
         
         {/* Floating Geometric Shapes */}
         <div className="absolute inset-0">
@@ -83,14 +83,14 @@ export default function AnimatedTextLogo() {
               }}
             >
               {i % 3 === 0 && (
-                <div className="w-4 h-4 border border-black/20 rounded-full" />
+                <div className="w-4 h-4 border border-white/20 rounded-full" />
               )}
               {i % 3 === 1 && (
-                <div className="w-3 h-3 bg-black/15 rounded-sm transform rotate-45" />
+                <div className="w-3 h-3 bg-white/15 rounded-sm transform rotate-45" />
               )}
               {i % 3 === 2 && (
                 <svg width="16" height="16" viewBox="0 0 16 16">
-                  <polygon points="8,2 14,14 2,14" fill="none" stroke="black" strokeOpacity="0.2" strokeWidth="1" />
+                  <polygon points="8,2 14,14 2,14" fill="none" stroke="white" strokeOpacity="0.2" strokeWidth="1" />
                 </svg>
               )}
             </motion.div>
@@ -102,7 +102,7 @@ export default function AnimatedTextLogo() {
           {particlePositions.map((pos, i) => (
             <motion.div
               key={`particle-${i}`}
-              className="absolute w-1 h-1 bg-black/20 rounded-full"
+              className="absolute w-1 h-1 bg-white/20 rounded-full"
               style={{
                 left: `${pos.x}%`,
                 top: `${pos.y}%`,
@@ -136,7 +136,7 @@ export default function AnimatedTextLogo() {
             ease: "easeInOut",
           }}
         >
-          <div className="w-96 h-96 border border-black/10 rounded-full" />
+          <div className="w-96 h-96 border border-white/10 rounded-full" />
         </motion.div>
 
         <motion.div
@@ -152,7 +152,7 @@ export default function AnimatedTextLogo() {
             delay: 2,
           }}
         >
-          <div className="w-96 h-96 border border-black/8 rounded-full" />
+          <div className="w-96 h-96 border border-white/8 rounded-full" />
         </motion.div>
 
         {/* Dynamic Grid Pattern */}
@@ -169,8 +169,8 @@ export default function AnimatedTextLogo() {
           }}
           style={{
             backgroundImage: `
-              linear-gradient(0deg, transparent 24%, black 25%, black 26%, transparent 27%, transparent 74%, black 75%, black 76%, transparent 77%),
-              linear-gradient(90deg, transparent 24%, black 25%, black 26%, transparent 27%, transparent 74%, black 75%, black 76%, transparent 77%)
+              linear-gradient(0deg, transparent 24%, white 25%, white 26%, transparent 27%, transparent 74%, white 75%, white 76%, transparent 77%),
+              linear-gradient(90deg, transparent 24%, white 25%, white 26%, transparent 27%, transparent 74%, white 75%, white 76%, transparent 77%)
             `,
             backgroundSize: '30px 30px',
           }}
@@ -183,7 +183,7 @@ export default function AnimatedTextLogo() {
               key={`line-${i}`}
               d={`M0,${100 + i * 60} Q${200 + i * 50},${50 + i * 30} ${400},${150 + i * 40} T800,${100 + i * 50}`}
               fill="none"
-              stroke="black"
+              stroke="white"
               strokeWidth="1"
               strokeOpacity="0.1"
               strokeDasharray="4,8"
@@ -214,7 +214,7 @@ export default function AnimatedTextLogo() {
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={`orbit-${i}`}
-              className="absolute w-2 h-2 bg-black/15 rounded-full"
+              className="absolute w-2 h-2 bg-white/15 rounded-full"
               style={{
                 left: `${120 + Math.cos(((i * 45) * Math.PI) / 180) * 100}px`,
                 top: `${120 + Math.sin(((i * 45) * Math.PI) / 180) * 100}px`,
@@ -247,8 +247,8 @@ export default function AnimatedTextLogo() {
           }}
         >
           <svg width="40" height="40" viewBox="0 0 40 40">
-            <rect x="0" y="0" width="15" height="15" fill="none" stroke="black" strokeOpacity="0.2" strokeWidth="1" />
-            <rect x="25" y="25" width="15" height="15" fill="none" stroke="black" strokeOpacity="0.15" strokeWidth="1" />
+            <rect x="0" y="0" width="15" height="15" fill="none" stroke="white" strokeOpacity="0.2" strokeWidth="1" />
+            <rect x="25" y="25" width="15" height="15" fill="none" stroke="white" strokeOpacity="0.15" strokeWidth="1" />
           </svg>
         </motion.div>
 
@@ -265,8 +265,8 @@ export default function AnimatedTextLogo() {
           }}
         >
           <svg width="40" height="40" viewBox="0 0 40 40">
-            <circle cx="12" cy="12" r="8" fill="none" stroke="black" strokeOpacity="0.2" strokeWidth="1" />
-            <circle cx="28" cy="28" r="6" fill="none" stroke="black" strokeOpacity="0.15" strokeWidth="1" />
+            <circle cx="12" cy="12" r="8" fill="none" stroke="white" strokeOpacity="0.2" strokeWidth="1" />
+            <circle cx="28" cy="28" r="6" fill="none" stroke="white" strokeOpacity="0.15" strokeWidth="1" />
           </svg>
         </motion.div>
 
@@ -282,7 +282,7 @@ export default function AnimatedTextLogo() {
             ease: "easeInOut",
           }}
         >
-          <div className="w-6 h-6 border-2 border-black/20 transform rotate-45" />
+          <div className="w-6 h-6 border-2 border-white/20 transform rotate-45" />
         </motion.div>
 
         <motion.div
@@ -298,7 +298,7 @@ export default function AnimatedTextLogo() {
           }}
         >
           <svg width="30" height="30" viewBox="0 0 30 30">
-            <polygon points="15,5 25,20 5,20" fill="none" stroke="black" strokeOpacity="0.2" strokeWidth="1.5" />
+            <polygon points="15,5 25,20 5,20" fill="none" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" />
           </svg>
         </motion.div>
       </div>
@@ -354,10 +354,10 @@ export default function AnimatedTextLogo() {
               className={`inline-block ${
                 letter === ' ' ? 'w-4 md:w-6' : ''
               } ${
-                index < 6 ? 'text-black font-medium' : 'text-gray-700'
+                index < 6 ? 'text-white font-medium' : 'text-gray-300'
               }`}
               style={{
-                textShadow: animationComplete ? '0 2px 4px rgba(0,0,0,0.1)' : 'none',
+                textShadow: animationComplete ? '0 2px 4px rgba(255,255,255,0.1)' : 'none',
               }}
             >
               {letter === ' ' ? '\u00A0' : letter}
@@ -371,7 +371,7 @@ export default function AnimatedTextLogo() {
           style={{ maxWidth: '400px' }}
         >
           <motion.div
-            className="h-0.5 bg-gradient-to-r from-transparent via-black to-transparent"
+            className="h-0.5 bg-gradient-to-r from-transparent via-white to-transparent"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{
@@ -399,7 +399,7 @@ export default function AnimatedTextLogo() {
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              className="w-2 h-2 bg-black rounded-full"
+              className="w-2 h-2 bg-white rounded-full"
               animate={animationComplete ? {
                 scale: [1, 1.2, 1],
                 opacity: [0.6, 1, 0.6]
@@ -419,7 +419,7 @@ export default function AnimatedTextLogo() {
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-black/30 rounded-full"
+              className="absolute w-1 h-1 bg-white/30 rounded-full"
               style={{
                 left: `${20 + i * 15}%`,
                 top: `${30 + (i % 2) * 40}%`,
@@ -442,7 +442,7 @@ export default function AnimatedTextLogo() {
 
       {/* Signature Tagline */}
       <motion.div
-        className="mt-8 text-sm tracking-[0.3em] text-black/40 font-light uppercase"
+        className="mt-8 text-sm tracking-[0.3em] text-white/40 font-light uppercase text-center"
         initial={{ opacity: 0, letterSpacing: '0.1em' }}
         animate={{ 
           opacity: 1,
