@@ -3,6 +3,9 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'framer
 import { useRef, useEffect } from 'react';
 import AnimatedTextLogo from "@/components/AnimatedTextLogo";
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const skills = [
   'Logos',
   'Brand Development',
@@ -116,9 +119,9 @@ export default function Home() {
 
           {/* Skills Animated Showcase */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6, delay: 1.0 }}
             className="mb-20"
           >
             <div className="text-center mb-12 px-4">
@@ -196,15 +199,20 @@ export default function Home() {
 // Skills Reveal Section Component
 function SkillsRevealSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.3
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+        ease: "easeOut" as const
       }
     }
   };
@@ -212,18 +220,17 @@ function SkillsRevealSection() {
   const skillVariants = {
     hidden: { 
       opacity: 0, 
-      y: 60,
-      scale: 0.8
+      y: 30,
+      scale: 0.9
     },
     visible: { 
       opacity: 1, 
       y: 0,
       scale: 1,
       transition: {
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6
+        type: "tween" as const,
+        duration: 0.4,
+        ease: "easeOut" as const
       }
     }
   };
@@ -241,9 +248,8 @@ function SkillsRevealSection() {
             key={skill}
             variants={skillVariants}
             whileHover={{ 
-              scale: 1.05,
-              y: -5,
-              transition: { type: "spring" as const, stiffness: 400 }
+              scale: 1.02,
+              transition: { type: "tween" as const, duration: 0.2 }
             }}
             className="group relative"
           >
@@ -267,28 +273,29 @@ function SkillsRevealSection() {
         ))}
       </motion.div>
 
-      {/* Floating particles effect - reduced for mobile */}
+      {/* Reduced floating particles for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {isInView && [...Array(3)].map((_, i) => (
+        {isInView && [...Array(2)].map((_, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ 
-              opacity: [0, 0.6, 0],
+              opacity: [0, 0.4, 0],
               scale: [0, 1, 0],
-              x: [0, Math.random() * 150 - 75],
-              y: [0, Math.random() * 150 - 75]
+              x: [0, (i % 2 ? 50 : -50)],
+              y: [0, (i % 2 ? -30 : 30)]
             }}
             transition={{
-              duration: 4 + Math.random() * 2,
-              delay: Math.random() * 3,
+              duration: 6,
+              delay: i * 2,
               repeat: Infinity,
-              repeatDelay: 6 + Math.random() * 4
+              repeatDelay: 8,
+              ease: "easeInOut"
             }}
             className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
+              left: `${20 + i * 60}%`,
+              top: `${30 + i * 40}%`
             }}
           />
         ))}
@@ -312,7 +319,11 @@ function AnimatedStatCard({
   delay?: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-50px",
+    amount: 0.5
+  });
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
@@ -320,11 +331,11 @@ function AnimatedStatCard({
     if (isInView) {
       const timer = setTimeout(() => {
         const controls = animate(count, targetNumber, {
-          duration: 2,
+          duration: 1.5,
           ease: "easeOut"
         });
         return controls.stop;
-      }, delay * 1000);
+      }, delay * 500);
 
       return () => clearTimeout(timer);
     }
@@ -333,14 +344,13 @@ function AnimatedStatCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ 
-        duration: 0.8, 
-        delay: delay,
-        type: "spring",
-        stiffness: 100,
-        damping: 15
+        duration: 0.5, 
+        delay: delay * 0.1,
+        type: "tween",
+        ease: "easeOut"
       }}
       className="text-center p-8 bg-gray-800/60 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-700/50"
     >

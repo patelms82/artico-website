@@ -1,6 +1,9 @@
 "use client";
 import { motion } from 'framer-motion';
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function Clients() {
   return (
     <div className="relative overflow-hidden min-h-screen bg-gray-900">
@@ -11,9 +14,9 @@ export default function Clients() {
       </div>
       <main className="relative z-10 px-4 py-20">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5 }}
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-16">

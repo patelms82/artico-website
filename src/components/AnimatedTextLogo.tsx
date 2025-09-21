@@ -2,6 +2,9 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function AnimatedTextLogo() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -97,27 +100,27 @@ export default function AnimatedTextLogo() {
           ))}
         </div>
 
-        {/* Flowing Particle Stream */}
+        {/* Flowing Particle Stream - Reduced for performance */}
         <div className="absolute inset-0">
-          {particlePositions.map((pos, i) => (
+          {!shouldReduceMotion && particlePositions.slice(0, 15).map((pos, i) => (
             <motion.div
               key={`particle-${i}`}
-              className="absolute w-1 h-1 bg-white/20 rounded-full"
+              className="absolute w-1 h-1 bg-white/15 rounded-full"
               style={{
                 left: `${pos.x}%`,
                 top: `${pos.y}%`,
               }}
               animate={{
-                x: [0, 200, -100, 0],
-                y: [0, -50, 100, 0],
-                opacity: [0, 0.5, 0.8, 0],
-                scale: [0.5, 1.5, 0.5],
+                x: [0, 100, -50, 0],
+                y: [0, -25, 50, 0],
+                opacity: [0, 0.4, 0.6, 0],
+                scale: [0.5, 1.2, 0.5],
               }}
               transition={{
-                duration: 12 + (i % 6),
+                duration: 10 + (i % 4),
                 repeat: Infinity,
                 ease: "linear",
-                delay: i * 0.2,
+                delay: i * 0.3,
               }}
             />
           ))}

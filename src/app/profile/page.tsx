@@ -1,6 +1,9 @@
 "use client";
 import { motion } from 'framer-motion';
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function Profile() {
   const values = [
     { title: 'Clarity', desc: 'We distill complexity into strategic creative direction that moves brands forward.' },
@@ -27,17 +30,17 @@ export default function Profile() {
       </div>
       <main className="relative z-10 px-4 py-20">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5 }}
           className="max-w-6xl mx-auto"
         >
           {/* Hero */}
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.1 }}
               className="mb-8"
             >
               <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
@@ -48,9 +51,9 @@ export default function Profile() {
               <div className="w-24 h-1 bg-white mx-auto rounded-full" />
             </motion.div>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
               Artico Idea is a creative technology studio shaping cohesive brand and product experiences with strategic design, motion, and modern web engineering.
@@ -59,9 +62,9 @@ export default function Profile() {
 
           {/* About Block */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.3 }}
               className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16"
             >
               <h2 className="text-3xl font-bold text-white mb-6">Who We Are</h2>
@@ -80,9 +83,9 @@ export default function Profile() {
 
           {/* Values */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.4 }}
             className="mb-16"
           >
             <h2 className="text-3xl font-bold text-white text-center mb-10">Core Principles</h2>
@@ -107,9 +110,9 @@ export default function Profile() {
 
           {/* Metric Highlights */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20"
           >
             {[
@@ -135,9 +138,9 @@ export default function Profile() {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.85 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 }}
             className="text-center"
           >
             <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">

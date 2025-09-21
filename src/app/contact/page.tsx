@@ -2,6 +2,9 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function Contact() {
   return (
     <div className="bg-gray-900 relative overflow-hidden min-h-screen">
@@ -14,17 +17,17 @@ export default function Contact() {
 
       <main className="relative z-10 px-4 py-20">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
           {/* Hero Section */}
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.1 }}
               className="mb-8"
             >
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
@@ -36,9 +39,9 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.2 }}
               className="mb-8"
             >
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -50,9 +53,9 @@ export default function Contact() {
 
           {/* Contact Cards */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
           >
             {/* Email Card */}
@@ -112,9 +115,9 @@ export default function Contact() {
 
           {/* Location & Info */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.4 }}
             className="bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -161,9 +164,9 @@ export default function Contact() {
 
           {/* Call to Action */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
             <div className="bg-gray-800 rounded-3xl p-12 text-white shadow-2xl border border-gray-700">

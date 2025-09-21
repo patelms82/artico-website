@@ -1,6 +1,9 @@
 "use client";
 import { motion } from 'framer-motion';
 
+// Performance optimization: Check for reduced motion preference
+const shouldReduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function Services() {
   const services = [
     'Logos',
@@ -38,9 +41,9 @@ export default function Services() {
 
       <main className="relative z-10 px-4 py-20">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
           {/* Hero Section */}
