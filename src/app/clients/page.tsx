@@ -99,12 +99,8 @@ export default function Clients() {
                 'SARANG.png',
                 'VEDAS logo 1.png'
               ].map((logo, index) => (
-                <motion.div
+                <div
                   key={logo}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.3, delay: index * 0.02 }}
                   className="bg-white/80 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center hover:bg-white/90 transition-colors duration-200 shadow-lg"
                 >
                   <img
@@ -113,7 +109,7 @@ export default function Clients() {
                     className="max-w-full max-h-16 object-contain filter brightness-90 hover:brightness-100 transition-all duration-300"
                     loading="lazy"
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
