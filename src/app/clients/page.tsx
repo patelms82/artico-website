@@ -101,12 +101,11 @@ export default function Clients() {
               ].map((logo, index) => (
                 <motion.div
                   key={logo}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center hover:bg-white/90 transition-all duration-300 shadow-lg"
+                  transition={{ duration: 0.3, delay: index * 0.02 }}
+                  className="bg-white/80 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center hover:bg-white/90 transition-colors duration-200 shadow-lg"
                 >
                   <img
                     src={`/logos/${logo}`}
