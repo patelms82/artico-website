@@ -11,15 +11,21 @@ const navLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Clients', href: '/clients' },
-  { name: 'Career', href: '/career' },
+  // { name: 'Career', href: '/career' }, // Hidden for future use
   { name: 'Contact', href: '/contact' },
   { name: 'Profile', href: '/profile' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+
+  // Prevent hydration mismatch by ensuring client-side rendering
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -80,7 +86,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => {
-              const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+              const active = mounted ? (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) : false;
               return (
                 <div key={link.name} className="relative group">
                   <Link
@@ -143,7 +149,7 @@ export default function Navbar() {
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navLinks.map((link, index) => {
-                  const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+                  const active = mounted ? (link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)) : false;
                   return (
                     <motion.div
                       key={link.name}

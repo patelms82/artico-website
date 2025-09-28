@@ -64,10 +64,65 @@ export default function Clients() {
               />
             ))}
           </motion.div>
+          {/* Client Logos Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-4">Trusted by Leading Brands</h2>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                We&apos;ve had the privilege of working with amazing clients across various industries
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+              {[
+                'AKESILOM.png',
+                'ANFIX.png',
+                'ATMOS.png',
+                'AVDIAN.png',
+                'BLACKBIRD.png',
+                'BONANZA  TILES WORLD  LOGO.png',
+                'CATHAT.png',
+                'DAX PHOTO WORLD.png',
+                'KALPATARU.png',
+                'LOK SANGEET.png',
+                'MARUTI.png',
+                'MEXUS.png',
+                'NEREX.png',
+                'NJ.png',
+                'REDFIX.png',
+                'RICASA.png',
+                'SARANG.png',
+                'VEDAS logo 1.png'
+              ].map((logo, index) => (
+                <motion.div
+                  key={logo}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white/80 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center hover:bg-white/90 transition-all duration-300 shadow-lg"
+                >
+                  <img
+                    src={`/logos/${logo}`}
+                    alt={`${logo.replace(/\.(png|jpg)$/i, '')} logo`}
+                    className="max-w-full max-h-16 object-contain filter brightness-90 hover:brightness-100 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
             className="p-8 md:p-12 mb-16 text-center"
           >
             <h2 className="text-3xl font-bold text-white mb-6">Showcase Coming Soon</h2>
