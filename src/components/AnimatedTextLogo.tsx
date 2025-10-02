@@ -45,9 +45,9 @@ export default function AnimatedTextLogo() {
   if (!isMounted) {
     return (
       <div className="relative flex flex-col items-center justify-center h-[50vh] min-h-[400px] max-h-[600px] w-full">
-        <div className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center">
-          <span className="text-white font-medium">Where Ideas</span>{' '}
-          <span className="text-gray-300">Come Alive</span>
+        <div className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center px-4">
+          <span className="text-white font-medium whitespace-nowrap">Where Ideas</span>{' '}
+          <span className="text-white whitespace-nowrap">Come Alive</span>
         </div>
         <div className="mt-8 text-sm tracking-[0.3em] text-white/40 font-light uppercase text-center">
           beyond your Imagination
@@ -331,41 +331,74 @@ export default function AnimatedTextLogo() {
           delayChildren: 0.3,
         }}
       >
-        <div className="flex flex-wrap justify-center items-center gap-1 text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 50,
-                scale: 0.3,
-                rotateX: 90,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                rotateX: 0,
-              }}
-              transition={{
-                type: "spring",
-                damping: 12,
-                stiffness: 200,
-                duration: 0.6,
-                delay: index * 0.1 + 0.3,
-              }}
-              className={`inline-block ${
-                letter === ' ' ? 'w-4 md:w-6' : ''
-              } ${
-                index < 11 ? 'text-white font-medium' : 'text-gray-300'
-              }`}
-              style={{
-                textShadow: animationComplete ? '0 2px 4px rgba(255,255,255,0.1)' : 'none',
-              }}
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </motion.span>
-          ))}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-4xl md:text-5xl lg:text-6xl font-light tracking-wide px-4">
+          {/* Group 1: "Where Ideas" */}
+          <div className="flex whitespace-nowrap">
+            {letters.slice(0, 11).map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.3,
+                  rotateX: 90,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotateX: 0,
+                }}
+                transition={{
+                  type: "spring",
+                  damping: 12,
+                  stiffness: 200,
+                  duration: 0.6,
+                  delay: index * 0.1 + 0.3,
+                }}
+                className="inline-block text-white font-medium"
+                style={{
+                  textShadow: animationComplete ? '0 2px 4px rgba(255,255,255,0.1)' : 'none',
+                }}
+              >
+                {letter === ' ' ? '\u00A0' : letter}
+              </motion.span>
+            ))}
+          </div>
+          
+          {/* Group 2: "Come Alive" */}
+          <div className="flex whitespace-nowrap">
+            {letters.slice(11).map((letter, index) => (
+              <motion.span
+                key={index + 11}
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.3,
+                  rotateX: 90,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  rotateX: 0,
+                }}
+                transition={{
+                  type: "spring",
+                  damping: 12,
+                  stiffness: 200,
+                  duration: 0.6,
+                  delay: (index + 11) * 0.1 + 0.3,
+                }}
+                className="inline-block text-white"
+                style={{
+                  textShadow: animationComplete ? '0 2px 4px rgba(255,255,255,0.1)' : 'none',
+                }}
+              >
+                {letter === ' ' ? '\u00A0' : letter}
+              </motion.span>
+            ))}
+          </div>
         </div>
 
         {/* Elegant Underline */}

@@ -83,7 +83,7 @@ export default function Home() {
               className="mb-12"
             >
               <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto font-light">
-                Transforming brands through innovative design, cutting-edge technology, and artistic excellence. 
+                Transforming brands through innovative design, cutting-edge technology, and artistic excellence.{' '}
                 <span className="font-semibold text-white">
                   Let&apos;s create something extraordinary together.
                 </span>
