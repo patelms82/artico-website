@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Center - Social Links */}
           <div className="flex gap-4 sm:gap-6 items-center justify-center order-3 md:order-2">
             <a 
-              href="mailto:patelms82@gmail.com" 
+              href="mailto:info@nvmdstudio.com" 
               className="hover:text-gray-300 flex items-center gap-2 transition-all duration-200 hover:scale-105 text-sm sm:text-base"
             >
               <FaEnvelope className="text-base sm:text-lg" /> 

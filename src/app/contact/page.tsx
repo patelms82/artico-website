@@ -60,7 +60,7 @@ export default function Contact() {
           >
             {/* Email Card */}
             <motion.a
-              href="mailto:patelms82@gmail.com"
+              href="mailto:info@nvmdstudio.com"
               whileHover={{ scale: 1.02, y: -5 }}
               className="bg-gray-900/70 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-800 block"
             >
@@ -74,7 +74,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="text-lg text-white hover:text-gray-300 font-semibold block mb-4">
-                patelms82@gmail.com
+                info@nvmdstudio.com
               </div>
               <p className="text-gray-300">
                 Whether you have a project in mind or just want to say hello, 
@@ -173,7 +173,7 @@ export default function Contact() {
                 Let&apos;s schedule a consultation and discuss how we can bring your vision to life.
               </p>
               <a
-                href="mailto:patelms82@gmail.com"
+                href="mailto:info@nvmdstudio.com"
                 className="bg-gradient-to-r from-white to-gray-100 text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:from-gray-900 hover:to-black hover:text-white border border-transparent hover:border-gray-600 inline-block"
               >
                 Send Message Now
